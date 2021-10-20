@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\AdminPageController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::prefix('admin')->group(function(){
+    Route::get('/', [AdminPageController::class, 'index']);
 });
 
 Route::resource('test', App\Http\Controllers\TestTemplate::class);
