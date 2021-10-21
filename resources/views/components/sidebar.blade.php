@@ -25,25 +25,24 @@
                 </li>
 
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-briefcase"></i> <span> Elements </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-briefcase"></i> <span> Pekerjaan </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="ui-alerts.html">Alerts</a></li>
                         <li><a href="ui-badge.html">Badge</a></li>
-                        <li><a href="ui-buttons.html">Buttons</a></li>
-                        <li><a href="ui-cards.html">Cards</a></li>
-                        <li><a href="ui-dropdowns.html">Dropdowns</a></li>
-                        <li><a href="ui-navs.html">Navs</a></li>
-                        <li><a href="ui-tabs-accordions.html">Tabs &amp; Accordions</a></li>
-                        <li><a href="ui-modals.html">Modals</a></li>
-                        <li><a href="ui-images.html">Images</a></li>
-                        <li><a href="ui-progressbars.html">Progress Bars</a></li>
-                        <li><a href="ui-pagination.html">Pagination</a></li>
-                        <li><a href="ui-popover-tooltips.html">Popover & Tooltips</a></li>
-                        <li><a href="ui-spinner.html">Spinner</a></li>
-                        <li><a href="ui-carousel.html">Carousel</a></li>
-                        <li><a href="ui-video.html">Video</a></li>
-                        <li><a href="ui-typography.html">Typography</a></li>
-                        <li><a href="ui-grid.html">Grid</a></li>
+                    </ul>
+                </li>
+
+                @php
+                $sidebarJobCategory = sidebar_job_category();
+                @endphp
+
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-briefcase"></i> <span> Kategori Pekerjaan </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="/admin/job/category/create"><i class="dripicons-plus"></i> Tambah Kategori </a></li>
+                        @foreach ($sidebarJobCategory as $category)
+                            <li><a href="/admin/job/category/{{ $category->id }}"> {{ $category->name_category }} </a></li>
+                        @endforeach
                     </ul>
                 </li>
 
