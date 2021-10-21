@@ -56,9 +56,14 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show($id_category)
     {
         //
+        $category = Category::find($id_category);
+
+        return view('admin.category.show', [
+            'category' => $category
+        ]);
     }
 
     /**
@@ -67,9 +72,17 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit($id_category)
     {
         //
+        if(!$id_category){
+            return redirect()->back();
+        }
+
+        $category = Category::find($id_category);
+        return view('admin.category.edit', [
+            'category' => $category
+        ]);
     }
 
     /**
@@ -82,6 +95,14 @@ class CategoryController extends Controller
     public function update(Request $request, Category $category)
     {
         //
+        $category = Category::find($request->id);
+
+        $category->name_category = $request->name;
+        $category->keterangan = $request->description;
+
+        $category->save();
+
+        return redirect()->back()->with('success', 'Kategori "' . $category->name_category . '" berhasil diperbarui');
     }
 
     /**
@@ -90,8 +111,14 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy(Category $category, $id_category)
     {
         //
+        $category = Category::find($id_category);
+        $name_category = $category->name_category;
+        
+        $category->delete();
+
+        return redirect('/')->with('success', 'Kategori "' . $name_category . '" berhasil dihapus');
     }
 }
