@@ -25,6 +25,7 @@ class CategoryController extends Controller
     public function create()
     {
         //
+        return view('admin.category.create');
     }
 
     /**
@@ -36,6 +37,17 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
+        $validated = $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+        ]);
+
+        Category::create([
+            'name_category' => $validated['name'],
+            'keterangan' => $validated['description']
+        ]);
+
+        return redirect()->back()->with('success', 'Kategori ' . $validated['name'] . ' berhasil diinput');
     }
 
     /**
