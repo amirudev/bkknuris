@@ -47,7 +47,7 @@ class CategoryController extends Controller
             'keterangan' => $validated['description']
         ]);
 
-        return redirect()->back()->with('success', 'Kategori ' . $validated['name'] . ' berhasil diinput');
+        return redirect()->back()->with('success', 'Kategori "' . $validated['name'] . '" berhasil diinput');
     }
 
     /**
