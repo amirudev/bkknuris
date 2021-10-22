@@ -44,8 +44,7 @@
                             Kategori Pekerjaan </span> <span class="menu-arrow float-right"><i
                                 class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="list-unstyled">
-                        <li><a href="/admin/job/category/create"><i class="dripicons-plus"></i> Tambah Kategori </a>
-                        </li>
+                        <li><a href="/admin/job/category/create"><i class="dripicons-plus"></i> Tambah Kategori </a></li>
 
                         {{-- @foreach ($sidebarJobCategory as $category)
                             <li><a href="/admin/job/category/{{ $category->id }}"> {{ $category->name_category }} </a></li>
