@@ -74,6 +74,39 @@
         </div>
 
     </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="mt-0 header-title">Data Category</h4>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Nama Category</th>
+                                    <th>Keterangan</th>
+                                    <th>Tools</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>tes</td>
+                                    <td>tes</td>
+                                    <td>tes</td>
+                                    <td>tes</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 @endsection
