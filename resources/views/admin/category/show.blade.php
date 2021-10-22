@@ -1,36 +1,42 @@
 @extends('layouts.master')
-@section('title', 'Detail Kategori')
+@section('title', 'Kategori')
 @section('content')
 <div class="row">
-    @if ($errors->any())
-        <div class="alert alert-danger error-validation">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
+    <div class="col-12">
+        <div class="card m-b-30">
+            <div class="card-body">
+
+                <h4 class="mt-0 header-title">Detail Kategori</h4>
+                <p class="text-muted mb-3 font-14">Detail kategori untuk "{{ $category->name_category }}"</p>
+
+                <div class="w-100">
+                    <div class="form-group row">
+                        <label for="name" class="col-sm-2 col-form-label">Nama</label>
+                        <div class="col-sm-10">
+                            <input class="form-control {{ $errors->has('name') ? 'parsley-error' : '' }}" type="text" placeholder="Nama Kategori" id="name" name="name" value="{{ $category->name_category }}" readonly>
+                            @if($errors->has('name'))
+                                <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('name') }}</li></ul>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="description" class="col-sm-2 col-form-label">Keterangan</label>
+                        <div class="col-sm-10">
+                            <textarea name="description" id="description" cols="30" rows="10" class="form-control {{ $errors->has('description') ? 'parsley-error' : '' }}" placeholder="Keterangan Kategori" readonly>{{ $category->keterangan }}</textarea>
+                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('description') }}</li></ul>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <a class="btn btn-warning ml-2" href="/admin/job/category/edit/{{ $category->id }}">
+                            Edit Kategori
+                        </a>
+                        <a class="btn btn-danger ml-2" href="/admin/job/category/delete/{{ $category->id }}">
+                            Hapus Kategori
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-    @endif
-    @if(Session::has('success'))
-        <div class="alert alert-success">{{ Session::get('success') }}</div>
-    @endif
-    <form class="w-100">
-        <div class="form-group">
-          <label for="name_category">Nama</label>
-          <input type="text" class="form-control" id="name_category" placeholder="Nama Kategori" name="name" value="{{ $category->name_category }}" disabled>
-        </div>
-        <div class="form-group">
-          <label for="description_category">keterangan</label>
-          <textarea class="form-control" id="description_category" name="description" placeholder="Deskripsi Kategori" disabled>{{ $category->keterangan }}</textarea>
-        </div>
-        <div class="d-flex justify-content-end">
-            <a class="btn btn-warning ml-2" href="/admin/job/category/edit/{{ $category->id }}">
-                Edit Kategori
-            </a>
-            <a class="btn btn-danger ml-2" href="/admin/job/category/delete/{{ $category->id }}">
-                Hapus Kategori
-            </a>
-        </div>
-    </form>
+    </div>
 </div>
 @endsection
