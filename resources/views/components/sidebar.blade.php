@@ -6,13 +6,13 @@
 
     <div class="left-side-logo d-block d-lg-none">
         <div class="text-center">
-            
+
             <a href="admin" class="logo"><img src="assets/images/logo_dark.png" height="20" alt="logo"></a>
         </div>
     </div>
 
     <div class="sidebar-inner slimscrollleft">
-        
+
         <div id="sidebar-menu">
             <ul>
                 <li class="menu-title">Main</li>
@@ -25,29 +25,49 @@
                 </li>
 
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-briefcase"></i> <span> Pekerjaan </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-briefcase"></i> <span>
+                            Pekerjaan </span> <span class="menu-arrow float-right"><i
+                                class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="ui-alerts.html">Alerts</a></li>
                         <li><a href="ui-badge.html">Badge</a></li>
                     </ul>
                 </li>
 
+
                 @php
-                $sidebarJobCategory = sidebar_job_category();
+                    $sidebarJobCategory = sidebar_job_category();
                 @endphp
 
+                {{-- @php
+                $sidebarJobCategory = sidebar_job_category();
+                @endphp --}}
+
+
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-briefcase"></i> <span> Kategori Pekerjaan </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-briefcase"></i> <span>
+                            Kategori Pekerjaan </span> <span class="menu-arrow float-right"><i
+                                class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="list-unstyled">
-                        <li><a href="/admin/job/category/create"><i class="dripicons-plus"></i> Tambah Kategori </a></li>
+                        <li><a href="/admin/job/category/create"><i class="dripicons-plus"></i> Tambah Kategori </a>
+                        </li>
+
                         @foreach ($sidebarJobCategory as $category)
-                            <li><a href="/admin/job/category/{{ $category->id }}"> {{ $category->name_category }} </a></li>
+                            <li><a href="/admin/job/category/{{ $category->id }}"> {{ $category->name_category }}
+                                </a></li>
                         @endforeach
+
+                        {{-- @foreach ($sidebarJobCategory as $category)
+                            <li><a href="/admin/job/category/{{ $category->id }}"> {{ $category->name_category }} </a></li>
+                        @endforeach --}}
+
                     </ul>
                 </li>
 
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-archive"></i> <span> Advanced UI </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-archive"></i> <span>
+                            Advanced UI </span> <span class="menu-arrow float-right"><i
+                                class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="advanced-alertify.html">Alertify</a></li>
                         <li><a href="advanced-rating.html">Rating</a></li>
@@ -59,7 +79,8 @@
                 </li>
 
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-rocket"></i> <span> Icons </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-rocket"></i> <span> Icons
+                        </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="icons-material.html">Material Design</a></li>
                         <li><a href="icons-ion.html">Ion Icons</a></li>
@@ -71,11 +92,13 @@
                 </li>
 
                 <li>
-                    <a href="calendar.html" class="waves-effect"><i class="dripicons-calendar"></i><span> Calendar </span></a>
+                    <a href="calendar.html" class="waves-effect"><i class="dripicons-calendar"></i><span> Calendar
+                        </span></a>
                 </li>
 
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-document"></i><span> Forms </span> <span class="badge badge-warning badge-pill float-right">8</span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-document"></i><span> Forms
+                        </span> <span class="badge badge-warning badge-pill float-right">8</span></a>
                     <ul class="list-unstyled">
                         <li><a href="form-elements.html">Form Elements</a></li>
                         <li><a href="form-validation.html">Form Validation</a></li>
@@ -89,7 +112,9 @@
                 </li>
 
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-graph-bar"></i><span> Charts </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-graph-bar"></i><span>
+                            Charts </span> <span class="menu-arrow float-right"><i
+                                class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="charts-morris.html">Morris Chart</a></li>
                         <li><a href="charts-chartist.html">Chartist Chart</a></li>
@@ -101,7 +126,9 @@
                 </li>
 
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-view-thumb"></i><span> Tables </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-view-thumb"></i><span>
+                            Tables </span> <span class="menu-arrow float-right"><i
+                                class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="tables-basic.html">Basic Tables</a></li>
                         <li><a href="tables-datatable.html">Data Table</a></li>
@@ -113,7 +140,8 @@
                 <li class="menu-title">Extra</li>
 
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-location"></i><span> Maps </span> <span class="badge badge-danger badge-pill float-right">2</span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-location"></i><span> Maps
+                        </span> <span class="badge badge-danger badge-pill float-right">2</span></a>
                     <ul class="list-unstyled">
                         <li><a href="maps-google.html"> Google Map</a></li>
                         <li><a href="maps-vector.html"> Vector Map</a></li>
@@ -121,7 +149,8 @@
                 </li>
 
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-copy"></i><span> Pages </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-copy"></i><span> Pages
+                        </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="pages-blank.html">Blank Page</a></li>
                         <li><a href="pages-login.html">Login</a></li>
@@ -134,7 +163,8 @@
                 </li>
 
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-medical"></i><span> Extras </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-medical"></i><span> Extras
+                        </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="extras-pricing.html">Pricing</a></li>
                         <li><a href="extras-invoice.html">Invoice</a></li>
@@ -150,4 +180,3 @@
         <div class="clearfix"></div>
     </div> <!-- end sidebarinner -->
 </div>
-<!-- Left Sidebar End -->
