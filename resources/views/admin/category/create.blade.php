@@ -77,7 +77,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
-                <div class="card-header">
+                <div class="card-body">
                     <h4 class="mt-0 header-title">Data Category</h4>
                 </div>
             </div>
