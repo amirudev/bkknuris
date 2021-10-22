@@ -33,16 +33,11 @@
                         <li><a href="ui-badge.html">Badge</a></li>
                     </ul>
                 </li>
-
+{{--
 
                 @php
                     $sidebarJobCategory = sidebar_job_category();
-                @endphp
-
-                {{-- @php
-                $sidebarJobCategory = sidebar_job_category();
                 @endphp --}}
-
 
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-briefcase"></i> <span>
@@ -51,11 +46,6 @@
                     <ul class="list-unstyled">
                         <li><a href="/admin/job/category/create"><i class="dripicons-plus"></i> Tambah Kategori </a>
                         </li>
-
-                        @foreach ($sidebarJobCategory as $category)
-                            <li><a href="/admin/job/category/{{ $category->id }}"> {{ $category->name_category }}
-                                </a></li>
-                        @endforeach
 
                         {{-- @foreach ($sidebarJobCategory as $category)
                             <li><a href="/admin/job/category/{{ $category->id }}"> {{ $category->name_category }} </a></li>
