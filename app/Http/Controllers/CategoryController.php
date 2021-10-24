@@ -15,6 +15,7 @@ class CategoryController extends Controller
     public function index()
     {
         //
+        abort(404);
     }
 
     /**
@@ -24,8 +25,11 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
-        return view('admin.category.create');
+        $category = Category::all();
+
+        return view('admin.category.create', [
+            'categories' => $category
+        ]);
     }
 
     /**
@@ -116,7 +120,7 @@ class CategoryController extends Controller
         //
         $category = Category::find($id_category);
         $name_category = $category->name_category;
-        
+
         $category->delete();
 
         return redirect('/')->with('success', 'Kategori "' . $name_category . '" berhasil dihapus');
