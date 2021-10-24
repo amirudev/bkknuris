@@ -58,7 +58,14 @@
                                 <td>{{ $loop->index + 1 }}</td>
                                 <td>{{ $category->name_category }}</td>
                                 <td>{{ $category->keterangan }}</td>
-                                <td></td>
+                                <td>
+                                    <a class="btn btn-warning m-1" href="/admin/job/category/edit/{{ $category->id }}">
+                                        Edit Kategori
+                                    </a>
+                                    <a class="btn btn-danger m-1" href="/admin/job/category/delete/{{ $category->id }}">
+                                        Hapus Kategori
+                                    </a>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
