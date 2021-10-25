@@ -6,13 +6,11 @@
 
     <div class="left-side-logo d-block d-lg-none">
         <div class="text-center">
-
             <a href="admin" class="logo"><img src="assets/images/logo_dark.png" height="20" alt="logo"></a>
         </div>
     </div>
 
     <div class="sidebar-inner slimscrollleft">
-
         <div id="sidebar-menu">
             <ul>
                 <li class="menu-title">Main</li>
