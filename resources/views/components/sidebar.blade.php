@@ -13,7 +13,6 @@
     </div>
 
     <div class="sidebar-inner slimscrollleft">
-
         <div id="sidebar-menu">
             <ul>
                 <li class="menu-title">Main</li>
@@ -35,16 +34,6 @@
                     </ul>
                 </li>
 
-                {{-- @php
-
-
-                @php
-
-                    $sidebarJobCategory = sidebar_job_category();
-                @endphp
-
-                {{-- If not working or something like sidebar_job_category undefined, please run "composer dump-autoload" --}}
-
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-briefcase"></i> <span>
                             Data Master </span> <span class="menu-arrow float-right"><i
@@ -56,10 +45,6 @@
                         <li>
                             <a href="/admin/job/jurusan/create"><i class="fas fa-tasks"></i> Data Jurusan</a>
                         </li>
-
-                        @foreach ($sidebarJobCategory as $category)
-                            <li><a href="/admin/job/category/{{ $category->id }}"> {{ $category->name_category }} </a></li>
-                        @endforeach
 
                     </ul>
                 </li>
