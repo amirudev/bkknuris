@@ -46,6 +46,9 @@
                         <li>
                             <a href="/admin/job/category/create"><i class="dripicons-plus"></i> Tambah Kategori </a>
                         </li>
+                        <li>
+                            <a href="/admin/job/jurusan/create"><i class="fas fa-tasks"></i> Data Jurusan</a>
+                        </li>
 
                         {{-- @foreach ($sidebarJobCategory as $category)
                             <li><a href="/admin/job/category/{{ $category->id }}"> {{ $category->name_category }} </a></li>
