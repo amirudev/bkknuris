@@ -25,8 +25,11 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
-        return view('admin.category.create');
+        $category = Category::all();
+
+        return view('admin.category.create', [
+            'categories' => $category
+        ]);
     }
 
     /**
@@ -120,6 +123,6 @@ class CategoryController extends Controller
 
         $category->delete();
 
-        return redirect('/')->with('success', 'Kategori "' . $name_category . '" berhasil dihapus');
+        return redirect()->back()->with('success', 'Kategori "' . $name_category . '" berhasil dihapus');
     }
 }
