@@ -59,6 +59,9 @@
                                 <td>{{ $category->name_category }}</td>
                                 <td>{{ $category->keterangan }}</td>
                                 <td>
+                                    <a class="btn btn-success m-1" href="/admin/job/category/{{ $category->id }}">
+                                        Lihat
+                                    </a>
                                     <a class="btn btn-warning m-1" href="/admin/job/category/edit/{{ $category->id }}">
                                         Edit Kategori
                                     </a>
