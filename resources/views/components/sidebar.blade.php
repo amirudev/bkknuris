@@ -13,7 +13,6 @@
     </div>
 
     <div class="sidebar-inner slimscrollleft">
-
         <div id="sidebar-menu">
             <ul>
                 <li class="menu-title">Main</li>
